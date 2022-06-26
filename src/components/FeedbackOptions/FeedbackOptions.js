@@ -1,17 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const StyledButton = styled.button`
-  :not(: last-child) {
-    margin-right: 10px;
-  }
-
-  :first-letter {
-    text-transform: uppercase;
-
-    colo
-  }
-`;
+import { StyledButton } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(el => (
@@ -23,6 +11,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string.isRequired),
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;

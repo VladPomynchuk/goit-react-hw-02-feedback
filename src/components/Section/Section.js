@@ -1,15 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const StyledSection = styled.section`
-  padding-top: 10px;
-  padding-bottom: 10px;
-`;
-
-const StyledTitle = styled.h2`
-  text-transform: uppercase;
-  text-align: center;
-`;
+import { StyledTitle, StyledSection } from './Section.styled.jsx';
 
 const Section = ({ title, children }) => {
   return (

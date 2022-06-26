@@ -1,10 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Message = styled.p`
-  text-align: center;
-  color: red;
-`;
+import { Message } from './Notification.styled';
 
 const Notification = ({ message }) => {
   return <Message>{message}</Message>;

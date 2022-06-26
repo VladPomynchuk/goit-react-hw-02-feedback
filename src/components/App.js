@@ -3,22 +3,7 @@ import Section from './Section';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import Notification from './Notification';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 1024px;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+import { Container, Wrapper } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -52,7 +37,7 @@ export class App extends Component {
   render() {
     return (
       <Container>
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <Wrapper>
             <FeedbackOptions
               options={Object.keys(this.state)}
@@ -60,7 +45,7 @@ export class App extends Component {
             />
           </Wrapper>
         </Section>
-        <Section title={'Statistics'}>
+        <Section title="Statistics">
           {this.countTotalFeedback() > 0 ? (
             <Statistics
               good={this.state.good}
@@ -70,7 +55,7 @@ export class App extends Component {
               positiveFeedback={this.countPositiveFeedbackPercentage()}
             ></Statistics>
           ) : (
-            <Notification message={'There is no feedback'} />
+            <Notification message="There is no feedback" />
           )}
         </Section>
       </Container>
